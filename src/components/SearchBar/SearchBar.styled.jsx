@@ -5,7 +5,7 @@ export const Form = styled.form`
   align-items: center;
   width: 100%;
   max-width: 600px;
-  margin:0 auto;
+  margin:0 auto 15px;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),

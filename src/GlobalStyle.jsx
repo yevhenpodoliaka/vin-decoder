@@ -48,15 +48,17 @@ export const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-  main{
-  padding: 15px;
-  }
+
 `;
 
 export const Container = styled.div`
   margin: 0 auto;
   @media screen and (min-width: 320px) {
+    padding: 15px;
     width: 320px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
   }
   @media screen and (min-width: 1440px) {
     width: 1440px;

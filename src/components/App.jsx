@@ -1,16 +1,16 @@
+import { Routes, Route} from 'react-router-dom';
+import Layout from './Layout/Layout';
+import MainPage from 'pages/MainPage';
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 };

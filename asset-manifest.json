@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/vin-decoder/static/js/main.fa3cd6f3.js",
+    "index.html": "/vin-decoder/index.html",
+    "main.fa3cd6f3.js.map": "/vin-decoder/static/js/main.fa3cd6f3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fa3cd6f3.js"
+  ]
+}

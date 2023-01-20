@@ -1,6 +1,8 @@
 import React from 'react'
-import { Item ,VariableText,ValueText} from './DecodedItem.styled';
+import { Item, VariableText, ValueText } from './DecodedItem.styled';
+
 const DecodedItem = ({ Variable, Value }) => {
+  
     return (
       <Item>
         <VariableText >{Variable}</VariableText>

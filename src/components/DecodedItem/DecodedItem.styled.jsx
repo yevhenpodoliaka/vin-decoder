@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
-
 export const Item= styled.li`
     display:flex
-
-    
+   
 `
-
-
 export const VariableText = styled.p`
 padding:4px;
     font-weight:700;

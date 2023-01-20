@@ -11,26 +11,27 @@ const SearchBar= ({onSubmit}) => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(value);
+    onSubmit(value.trim());
     setValue('');
   };
 
   return (
+    <Form onSubmit={handleSubmit}>
 
-      <Form onSubmit={handleSubmit}>
-        <Btn type="submit">
-          <FiSearch />
-        </Btn>
+      <Input
+        onChange={handleChange}
+        value={value}
+        type="text"
+        autocomplete="off"
+        autoFocus
+        placeholder="Enter your VIN-CODE"
+      />
 
-        <Input
-          onChange={handleChange}
-          value={value}
-          type="text"
-          autocomplete="off"
-          autoFocus
-          placeholder="Enter your VIN-CODE"
-        />
-      </Form>
+      <Btn type="submit">
+        <FiSearch />
+      </Btn>
+      
+    </Form>
   );
 };
 

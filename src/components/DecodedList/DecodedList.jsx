@@ -1,7 +1,8 @@
-import DecodedItem from 'DecodedItem/DecodedItem';
+import DecodedItem from '../DecodedItem/DecodedItem';
 import { List } from './DecodedList.styled';
 
-const DecodedList =({ data })=> {
+const DecodedList = ({ data }) => {
+  
   return (
     <List>
       {data?.map(({ Variable, Value, },index) => (

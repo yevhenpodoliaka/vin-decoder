@@ -1,8 +1,8 @@
 import {Header, NavItem } from './AppBar.styled';
-import { FiSearch, FiBookOpen } from 'react-icons/fi';
-
+import { AiOutlineCar, AiOutlineHome, AiOutlineFileText } from 'react-icons/ai';
 
 const AppBar = () => {
+  
   return (
     <Header>
       <nav
@@ -14,11 +14,14 @@ const AppBar = () => {
         }}
       >
         <NavItem to="/">
-          <FiSearch size="16" />
-          Search
+          <AiOutlineHome size="16" />
+        </NavItem>
+        <NavItem to="/decoder">
+          <AiOutlineCar size="16" />
+          Decode VIN
         </NavItem>
         <NavItem to="/variables">
-          <FiBookOpen size="16" />
+          <AiOutlineFileText size="16" />
           Variables
         </NavItem>
       </nav>

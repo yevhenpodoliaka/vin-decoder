@@ -18,11 +18,12 @@ const HistoryList = () => {
       return;
     }
     if (historyList.includes(query)) {
-      setHistoryList(prevHistory=>[query,...prevHistory.filter(i=>i!==query)])
       return
     }
     setHistoryList(prevHistory => [query, ...prevHistory.slice(0, 4)]);
+
   }, [historyList, query, setHistoryList]);
+
 
   return (
     <>
@@ -33,6 +34,10 @@ const HistoryList = () => {
             <Btn
               onClick={() => {
                 queryParam(item);
+                setHistoryList(prevHistory => [
+                   item,
+                   ...prevHistory.filter(i => i !== item),
+                 ]);
               }}
             >
               {item}

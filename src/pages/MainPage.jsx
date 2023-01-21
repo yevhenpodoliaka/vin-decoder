@@ -6,15 +6,12 @@ import DecodedList from 'components/DecodedList/DecodedList';
 import Message from 'components/Massage/Message';
 import HistoryList from 'components/HistoryList/HistoryList';
 
-
-
-
 const MainPage = () => {
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('');
   const [results, setResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [isLoading, setIsLoading] = useState(false)
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const queryParam = value => {
     setSearchParams(value !== '' ? { vinCode: value } : {});
@@ -26,28 +23,26 @@ const MainPage = () => {
     if (!query) {
       return;
     }
-    setIsLoading(true)
+    setIsLoading(true);
 
     fetchDecoderVin(query)
       .then(res => {
         setResults(res.Results);
         setMessage(res.Message);
       })
-      .catch(console.log)
+      .catch(setError)
       .finally(() => setIsLoading(false));
-    
-      
-  },[ query])
+  }, [query]);
 
   const filteredResult = results.filter(
     item => item.Value && item.Value !== '0' && item.Variable !== 'Error Text'
   );
-
+  console.log(error);
   return (
     <main>
       <SearchBar onSubmit={queryParam} />
-      <Message text={message} />
-
+      {error && <Message text="Error!!!!" />}
+      {message && <Message text={message} />}
       <HistoryList />
       {query && <h3> VIN:{query}</h3>}
       {isLoading && <p>Loading ...</p>}

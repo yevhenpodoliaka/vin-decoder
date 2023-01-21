@@ -5,7 +5,7 @@ import useLocalStorage from 'hooks/useLocalStorage';
 
 const HistoryList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [historyList, setHistoryList] = useLocalStorage("historyList",[]);
+  const [historyList, setHistoryList] = useLocalStorage('historyList', []);
 
   const queryParam = value => {
     setSearchParams(value !== '' ? { vinCode: value } : {});
@@ -18,12 +18,10 @@ const HistoryList = () => {
       return;
     }
     if (historyList.includes(query)) {
-      return
+      return;
     }
     setHistoryList(prevHistory => [query, ...prevHistory.slice(0, 4)]);
-
   }, [historyList, query, setHistoryList]);
-
 
   return (
     <>
@@ -35,11 +33,11 @@ const HistoryList = () => {
               onClick={() => {
                 queryParam(item);
                 setHistoryList(prevHistory => [
-                   item,
-                   ...prevHistory.filter(i => i !== item),
-                 ]);
+                  item,
+                  ...prevHistory.filter(i => i !== item),
+                ]);
               }}
-              isActive={item===query}
+              isActive={item === query}
             >
               {item}
             </Btn>

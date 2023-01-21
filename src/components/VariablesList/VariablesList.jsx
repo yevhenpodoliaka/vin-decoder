@@ -1,29 +1,23 @@
-import { Link,useLocation } from "react-router-dom";
-import { ItemTitle,ItemTypeName,ItemDescription} from "./VariablesList.styled";
+import { Link } from 'react-router-dom';
+import {
+  List,
+  Item,
+  ValueText,
+  VariableText,
+} from '../ListTable/ListTable.styled';
 const VariablesList = ({ data }) => {
-    const location = useLocation();
   return (
-    <ul>
-      {data?.map(({ DataType, Description, GroupName, ID, Name }) => (
-        <li
-          key={ID}
-          style={{
-            backgroundColor: '#f1f1f1',
-            marginBottom: '8px',
-            padding: '20px',
-          }}
-        >
-          <Link to={`/variables/${ID}`} state={{ from: location }}>
-            <ItemTitle>GroupName:{GroupName}</ItemTitle>
-            <ItemTypeName>Name : {Name}</ItemTypeName>
-            <ItemDescription dangerouslySetInnerHTML={{ __html: Description }} />
-
-            
+    <List>
+      {data?.map(({ Description, GroupName, ID, Name }) => (
+        <Item key={ID}>
+          <Link style={{display:"flex", width:"100%"}} to={`/variables/${ID}`} state={{ description: Description }}>
+            <VariableText>GroupName:{GroupName}</VariableText>
+            <ValueText>Name : {Name}</ValueText>
           </Link>
-        </li>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
-}
+};
 
-export default VariablesList
+export default VariablesList;

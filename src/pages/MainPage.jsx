@@ -41,7 +41,8 @@ const MainPage = () => {
     <main>
       <SearchBar onSubmit={queryParam} />
       <Message text={message}/>
-      <HistoryList/>
+      <HistoryList />
+      {query&&<h3> VIN:{query }</h3>}
       {filteredResult && <DecodedList data={filteredResult} />}
     </main>
   );

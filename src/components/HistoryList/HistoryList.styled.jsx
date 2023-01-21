@@ -13,7 +13,7 @@ export const ListTitle =styled.h3`
 
 export const Btn = styled.button`
   padding: 4px;
-  background-color: #3f51b5;
+  background-color:${props=>props.isActive?"#3f51b5":"transparent"};
   color: #fff;
   &:hover {
     color: black;

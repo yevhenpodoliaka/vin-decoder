@@ -39,6 +39,7 @@ const HistoryList = () => {
                    ...prevHistory.filter(i => i !== item),
                  ]);
               }}
+              isActive={item===query}
             >
               {item}
             </Btn>

@@ -8,8 +8,15 @@ export  const fetchDecoderVin = async(vin)=> {
 }
 
 export const fetchInfo = async () => {
-      const url = `${BASE_URL}/vehicles/getvehiclevariablelist?format=json`;
+      const url = `${BASE_URL}/vehicles/GetVehicleVariableList?format=json`;
       const response = await fetch(url);
       const data = await response.json();
       return data;
 }
+
+export const fetchInfoById = async (id) => {
+  const url = `${BASE_URL}/vehicles/GetVehicleVariableValuesList/${id}?format=json`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.Results;
+};

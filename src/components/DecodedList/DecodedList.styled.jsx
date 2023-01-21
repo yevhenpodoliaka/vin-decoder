@@ -4,10 +4,11 @@ export const List = styled.ul`
   li:not(:last-child) {
     margin-bottom:8px
   }
-  background-color:#666666
+
 `;
 export const Item = styled.li`
   display: flex;
+  background-color:#f1f1f1
 `;
 export const VariableText = styled.p`
   padding: 4px;

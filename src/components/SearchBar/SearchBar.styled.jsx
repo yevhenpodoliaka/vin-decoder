@@ -5,7 +5,7 @@ export const Form = styled.form`
   align-items: center;
   width: 100%;
   max-width: 600px;
-  margin:15px auto ;
+  margin: 15px auto;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -14,15 +14,16 @@ export const Form = styled.form`
 
 export const Btn = styled.button`
   display: inline-block;
+  background-color: #3f51b5;
   width: 48px;
   height: 48px;
   border: 0;
-  opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
   :hover {
-    opacity: 1;
+    font-size: 16px;
+    color: white;
   }
 `;
 
@@ -35,7 +36,7 @@ export const Input = styled.input`
   outline: none;
   padding-left: 4px;
   padding-right: 4px;
- 
+
   ::placeholder {
     font: inherit;
     font-size: 18px;

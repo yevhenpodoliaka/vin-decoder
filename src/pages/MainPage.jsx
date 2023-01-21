@@ -8,10 +8,13 @@ import HistoryList from 'components/HistoryList/HistoryList';
 
 
 
+
 const MainPage = () => {
   const [message, setMessage] = useState('')
   const [results, setResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false)
+
 
   const queryParam = value => {
     setSearchParams(value !== '' ? { vinCode: value } : {});
@@ -23,13 +26,16 @@ const MainPage = () => {
     if (!query) {
       return;
     }
+    setIsLoading(true)
 
     fetchDecoderVin(query)
-          .then( res=>
-            {setResults(res.Results)
-              setMessage(res.Message)
-            })
-      .catch(console.log);
+      .then(res => {
+        setResults(res.Results);
+        setMessage(res.Message);
+      })
+      .catch(console.log)
+      .finally(() => setIsLoading(false));
+    
       
   },[ query])
 
@@ -40,9 +46,11 @@ const MainPage = () => {
   return (
     <main>
       <SearchBar onSubmit={queryParam} />
-      <Message text={message}/>
+      <Message text={message} />
+
       <HistoryList />
-      {query&&<h3> VIN:{query }</h3>}
+      {query && <h3> VIN:{query}</h3>}
+      {isLoading && <p>Loading ...</p>}
       {filteredResult && <DecodedList data={filteredResult} />}
     </main>
   );

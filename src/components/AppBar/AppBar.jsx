@@ -1,5 +1,5 @@
 import {Header, NavItem } from './AppBar.styled';
-import { AiOutlineCar, AiOutlineHome, AiOutlineFileText } from 'react-icons/ai';
+import { AiOutlineCar, AiOutlineFileText } from 'react-icons/ai';
 
 const AppBar = () => {
   
@@ -14,9 +14,6 @@ const AppBar = () => {
         }}
       >
         <NavItem to="/">
-          <AiOutlineHome size="16" />
-        </NavItem>
-        <NavItem to="/decoder">
           <AiOutlineCar size="16" />
           Decode VIN
         </NavItem>

@@ -2,8 +2,6 @@ import { Link,useLocation } from "react-router-dom";
 const VariablesList = ({ data }) => {
     const location = useLocation();
   return (
-    <main>
-      <h3>Variables List</h3>
       <ul>
         {data?.map(({ DataType, Description, GroupName, ID, Name }) => (
           <li
@@ -19,7 +17,7 @@ const VariablesList = ({ data }) => {
           </li>
         ))}
       </ul>
-    </main>
+
   );
 }
 

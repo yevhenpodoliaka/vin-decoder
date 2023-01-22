@@ -1,10 +1,20 @@
 {
   "files": {
-    "main.js": "/vin-decoder/static/js/main.99d9dcbb.js",
+    "main.js": "/vin-decoder/static/js/main.f12e51a1.js",
+    "static/js/744.d7f4ede3.chunk.js": "/vin-decoder/static/js/744.d7f4ede3.chunk.js",
+    "static/js/269.fe784b33.chunk.js": "/vin-decoder/static/js/269.fe784b33.chunk.js",
+    "static/js/328.eab2bb6a.chunk.js": "/vin-decoder/static/js/328.eab2bb6a.chunk.js",
+    "static/js/520.d183dc6f.chunk.js": "/vin-decoder/static/js/520.d183dc6f.chunk.js",
+    "static/js/286.150230e9.chunk.js": "/vin-decoder/static/js/286.150230e9.chunk.js",
     "index.html": "/vin-decoder/index.html",
-    "main.99d9dcbb.js.map": "/vin-decoder/static/js/main.99d9dcbb.js.map"
+    "main.f12e51a1.js.map": "/vin-decoder/static/js/main.f12e51a1.js.map",
+    "744.d7f4ede3.chunk.js.map": "/vin-decoder/static/js/744.d7f4ede3.chunk.js.map",
+    "269.fe784b33.chunk.js.map": "/vin-decoder/static/js/269.fe784b33.chunk.js.map",
+    "328.eab2bb6a.chunk.js.map": "/vin-decoder/static/js/328.eab2bb6a.chunk.js.map",
+    "520.d183dc6f.chunk.js.map": "/vin-decoder/static/js/520.d183dc6f.chunk.js.map",
+    "286.150230e9.chunk.js.map": "/vin-decoder/static/js/286.150230e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.99d9dcbb.js"
+    "static/js/main.f12e51a1.js"
   ]
 }

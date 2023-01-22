@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FiSearch } from 'react-icons/fi';
-import { Form, Btn, Input } from './SearchBar.styled';
+import { Form, Btn, Input ,ErrorInputText} from './SearchBar.styled';
 
 const SearchBar= ({onSubmit}) => {
   const [value, setValue] = useState('');
   
-//TODO Validation input!!!!!!!!!!!!!!!
+
   const handleChange = e => {
     setValue(e.target.value);
   };
@@ -17,7 +17,6 @@ const SearchBar= ({onSubmit}) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-
       <Input
         onChange={handleChange}
         value={value}
@@ -25,12 +24,13 @@ const SearchBar= ({onSubmit}) => {
         autocomplete="off"
         autoFocus
         placeholder="Enter your VIN-CODE"
+        minLength={17}
+        maxLength={17}
       />
-
+      <ErrorInputText>Length vin-code must have 17 symbols</ErrorInputText>
       <Btn type="submit">
         <FiSearch />
       </Btn>
-      
     </Form>
   );
 };

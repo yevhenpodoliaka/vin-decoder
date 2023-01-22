@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+position:relative;
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 600px;
-  margin: 15px auto;
+  margin: 20px auto;
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -19,7 +20,6 @@ export const Btn = styled.button`
   height: 48px;
   border: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
   outline: none;
   :hover {
     font-size: 16px;
@@ -36,9 +36,21 @@ export const Input = styled.input`
   outline: none;
   padding-left: 4px;
   padding-right: 4px;
-
+text-transform: uppercase;
   ::placeholder {
     font: inherit;
     font-size: 18px;
+  }
+
+`;
+export const ErrorInputText = styled.p`
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  display:none;
+
+  input:invalid +&{
+    display: block;
+    color: red;
   }
 `;

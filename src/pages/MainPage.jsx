@@ -37,7 +37,7 @@ const MainPage = () => {
   const filteredResult = results.filter(
     item => item.Value && item.Value !== '0' && item.Variable !== 'Error Text'
   );
-  console.log(error);
+
   return (
     <main>
       <SearchBar onSubmit={queryParam} />

@@ -17,6 +17,7 @@ export const ListTitle =styled.h3`
 `
 
 export const Btn = styled.div`
+text-align:center;
   padding: 4px;
   background-color: ${props => (props.isActive ? '#3f51b5' : 'transparent')};
   color: black;

@@ -1,10 +1,11 @@
-import { Routes, Route} from 'react-router-dom';
+import { lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import MainPage from 'pages/MainPage';
-import VariablePage from 'pages/VariablePage';
-import VariablesDetailsPage from "pages/VariablesDetailsPage"
-import NotFoundPage from 'pages/NotFoundPage';
 
+const MainPage = lazy(() => import('../pages/MainPage'));
+const VariablePage = lazy(() => import("../pages/VariablePage"))
+const VariablesDetailsPage = lazy(() => import("../pages/VariablesDetailsPage"))
+const NotFoundPage = lazy (()=>import("../pages/NotFoundPage"))
 
 export const App = () => {
   return (
@@ -15,7 +16,7 @@ export const App = () => {
           <Route path="variables/" element={<VariablePage />} />
           <Route
             path="variables/:variablesId"
-            element={<VariablesDetailsPage/>}
+            element={<VariablesDetailsPage />}
           />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchDecoderVin } from 'service/apiService';
 import { useSearchParams } from 'react-router-dom';
+import Spinner from 'components/Spinner/Spinner';
 import SearchBar from 'components/SearchBar/SearchBar';
 import DecodedList from 'components/DecodedList/DecodedList';
 import Message from 'components/Massage/Message';
@@ -46,8 +47,8 @@ const MainPage = () => {
       {message && <Message text={message} />}
       <HistoryList />
       {query && <h3> VIN:{query}</h3>}
-      {isLoading && <p>Loading ...</p>}
-      {filteredResult && <DecodedList data={filteredResult} />}
+      {isLoading && <Spinner />}
+      {!isLoading && filteredResult && <DecodedList data={filteredResult} />}
     </main>
   );
 };

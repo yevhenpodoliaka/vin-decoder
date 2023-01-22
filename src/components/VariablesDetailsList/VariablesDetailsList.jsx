@@ -5,11 +5,11 @@ import {
   VariableText,
 } from '../ListTable/ListTable.styled';
 
-const VariablesDetailsList = ({ data, description }) => {
+const VariablesDetailsList = ({ data, description}) => {
 
   return (
     <>
-      <p dangerouslySetInnerHTML={{ __html: description }} style={{backgroundColor:"#f1f1f1", marginBottom:"8px", padding:"12px"}} />
+      {description&&<p dangerouslySetInnerHTML={{ __html: description }} style={{backgroundColor:"#f1f1f1", marginBottom:"8px", padding:"12px"}} />}
       <List>
         {data?.map(({ ElementName, Id, Name }) => (
           <Item key={Id}>

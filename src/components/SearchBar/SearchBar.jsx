@@ -2,10 +2,9 @@ import { useState } from "react";
 import { FiSearch } from 'react-icons/fi';
 import { Form, Btn, Input ,ErrorInputText} from './SearchBar.styled';
 
-const SearchBar= ({onSubmit}) => {
+const SearchBar = ({ onSubmit }) => {
   const [value, setValue] = useState('');
   
-
   const handleChange = e => {
     setValue(e.target.value);
   };

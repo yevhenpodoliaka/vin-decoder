@@ -51,6 +51,6 @@ export const ErrorInputText = styled.p`
 
   input:invalid +&{
     display: block;
-    color: red;
+    color: #1d069f;
   }
 `;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchInfo } from 'service/apiService';
+import Spinner from 'components/Spinner/Spinner';
 import Message from 'components/Massage/Message';
 import VariablesList from 'components/VariablesList/VariablesList';
 import PageTitle from 'components/PageTitle/PageTitle';
@@ -21,7 +22,7 @@ const VariablePage = () => {
     <main>
       <PageTitle text="Variables List" />
       {error && <Message text="Error!!!!" />}
-      {isLoading && <p>Loading ...</p>}
+      {isLoading && <Spinner/>}
       {data && <VariablesList data={data.Results} />}
     </main>
   );

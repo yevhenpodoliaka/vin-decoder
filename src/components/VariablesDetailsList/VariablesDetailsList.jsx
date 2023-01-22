@@ -9,7 +9,7 @@ const VariablesDetailsList = ({ data, description }) => {
 
   return (
     <>
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      <p dangerouslySetInnerHTML={{ __html: description }} style={{backgroundColor:"#f1f1f1", marginBottom:"8px", padding:"12px"}} />
       <List>
         {data?.map(({ ElementName, Id, Name }) => (
           <Item key={Id}>

@@ -23,6 +23,7 @@ const MainPage = () => {
     if (!query) {
       return;
     }
+
     setIsLoading(true);
 
     fetchDecoderVin(query)
@@ -34,14 +35,14 @@ const MainPage = () => {
       .finally(() => setIsLoading(false));
   }, [query]);
 
-  const filteredResult = results.filter(
+  const filteredResult = results?.filter(
     item => item.Value && item.Value !== '0' && item.Variable !== 'Error Text'
   );
 
   return (
     <main>
       <SearchBar onSubmit={queryParam} />
-      {error && <Message text="Error!!!!" />}
+      {error && <Message text={error.message} />}
       {message && <Message text={message} />}
       <HistoryList />
       {query && <h3> VIN:{query}</h3>}
